@@ -8,7 +8,7 @@ function App() {
   const [army, setArmy] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:4000/bots')
+    fetch('https://bookm1.vercel.app/bots')
       .then((response) => response.json())
       .then((data) => setBots(data));
   }, []);
@@ -24,7 +24,7 @@ function App() {
   };
 
   const dischargeBot = (id) => {
-    fetch(`http://localhost:4000/bots/${id}`, { method: 'DELETE' })
+    fetch(`https://bookm1.vercel.app/bots/${id}`, { method: 'DELETE' })
       .then(() => {
         setArmy(army.filter((bot) => bot.id !== id));
         setBots(bots.filter((bot) => bot.id !== id)); 
